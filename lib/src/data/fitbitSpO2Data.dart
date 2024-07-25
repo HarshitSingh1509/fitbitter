@@ -1,3 +1,5 @@
+import 'package:fitbitter/src/utils/formats.dart';
+
 import 'package:fitbitter/src/data/fitbitData.dart';
 
 /// [FitbitSpO2Data] is a class implementing the data model of the
@@ -31,7 +33,7 @@ class FitbitSpO2Data implements FitbitData {
   factory FitbitSpO2Data.fromJson({required Map<String, dynamic> json}) {
     return FitbitSpO2Data(
       userID: json['userID'],
-      dateOfMonitoring: DateTime.parse(json['dateTime']),
+      dateOfMonitoring: Formats.onlyDayDateFormatTicks.parse(json['dateTime']),
       avgValue: json['value']['avg'],
       minValue: json['value']['min'],
       maxValue: json['value']['max'],
@@ -62,4 +64,5 @@ class FitbitSpO2Data implements FitbitData {
           ..write(')'))
         .toString();
   } // toString
+
 } // FitbitSpO2Data

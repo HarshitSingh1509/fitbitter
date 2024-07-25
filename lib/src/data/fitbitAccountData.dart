@@ -50,9 +50,6 @@ class FitbitAccountData implements FitbitData {
   /// The user's name settings.
   String? displayNameSetting;
 
-  /// The user's feature exercise goal.
-  bool? features;
-
   /// The user's first name.
   String? firstName;
 
@@ -142,7 +139,7 @@ class FitbitAccountData implements FitbitData {
 
   /// The unit used by the user for the weight.
   String? weightUnit;
-
+  //TODO: map 'features' field
   //TODO: map 'topBadges' field
 
   /// Default [FitbitAccountData] constructor.
@@ -162,7 +159,6 @@ class FitbitAccountData implements FitbitData {
     this.dateOfBirth,
     this.displayName,
     this.displayNameSetting,
-    this.features,
     this.firstName,
     this.foodsLocale,
     this.fullName,
@@ -198,7 +194,7 @@ class FitbitAccountData implements FitbitData {
   /// Generates a [FitbitAccountData] obtained from a json.
   factory FitbitAccountData.fromJson({required Map<String, dynamic> json}) {
     return FitbitAccountData(
-      userID: json['encodedId'],
+      userID: json['userID'],
       age: json['age'],
       ambassador: json['ambassador'],
       autoStrideEnabled: json['autoStrideEnabled'],
@@ -209,10 +205,9 @@ class FitbitAccountData implements FitbitData {
       challegesBeta: json['challegesBeta'],
       clockDisplayFormat: json['clockDisplayFormat'],
       corporate: json['corporate'],
-      dateOfBirth: DateTime.parse(json['dateOfBirth']),
+      dateOfBirth: Formats.onlyDayDateFormatTicks.parse(json['dateOfBirth']),
       displayName: json['displayName'],
       displayNameSetting: json['displayNameSetting'],
-      features: json['features']['exerciseGoal'],
       firstName: json['firstName'],
       foodsLocale: json['foodsLocale'],
       fullName: json['fullName'],
@@ -227,7 +222,7 @@ class FitbitAccountData implements FitbitData {
       lastName: json['lastName'],
       legalTermsAcceptRequired: json['legalTermsAcceptRequired'],
       locale: json['locale'],
-      memberSince: DateTime.parse(json['memberSince']),
+      memberSince: Formats.onlyDayDateFormatTicks.parse(json['memberSince']),
       mfaEnabled: json['mfaEnabled'],
       offsetFromUTCMillis: json['offsetFromUTCMillis'],
       sdkDeveloper: json['sdkDeveloper'],
@@ -264,7 +259,6 @@ class FitbitAccountData implements FitbitData {
           ..write('dateOfBirth: $dateOfBirth, ')
           ..write('displayName: $displayName, ')
           ..write('displayNameSetting: $displayNameSetting, ')
-          ..write('features: $features, ')
           ..write('firstName: $firstName, ')
           ..write('foodsLocale: $foodsLocale, ')
           ..write('fullName: $fullName, ')
@@ -302,7 +296,7 @@ class FitbitAccountData implements FitbitData {
   @override
   Map<String, dynamic> toJson<T extends FitbitData>() {
     return <String, dynamic>{
-      'encodedId': userID,
+      'userID': userID,
       'age': age,
       'ambassador': ambassador,
       'autoStrideEnabled': autoStrideEnabled,
@@ -311,10 +305,9 @@ class FitbitAccountData implements FitbitData {
       'avatar150': avatar150,
       'avatar640': avatar640,
       'challegesBeta': challegesBeta,
-      'dateOfBirth': dateOfBirth,
+      'dateOfBirth': Formats.onlyDayDateFormatTicks.format(dateOfBirth!),
       'displayName': displayName,
       'displayNameSetting': displayNameSetting,
-      'features': {'exerciseGoal': features},
       'firstName': firstName,
       'foodsLocale': foodsLocale,
       'fullName': fullName,
@@ -346,4 +339,5 @@ class FitbitAccountData implements FitbitData {
       'weightUnit': weightUnit,
     };
   } // toJson
+
 } // FitbitAccountData

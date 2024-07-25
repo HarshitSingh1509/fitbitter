@@ -1,3 +1,5 @@
+import 'package:fitbitter/src/utils/formats.dart';
+
 import 'package:fitbitter/src/data/fitbitData.dart';
 
 /// [FitbitHeartRateVariabilityData] is a class implementing the data model of the
@@ -28,7 +30,7 @@ class FitbitHeartRateVariabilityData implements FitbitData {
       {required Map<String, dynamic> json}) {
     return FitbitHeartRateVariabilityData(
       userID: json['userID'],
-      dateOfMonitoring: DateTime.parse(json['dateTime']),
+      dateOfMonitoring: Formats.onlyDayDateFormatTicks.parse(json['dateTime']),
       dailyRmssd: json['value']['dailyRmssd'],
       deepRmssd: json['value']['deepRmssd'],
     );
@@ -56,4 +58,5 @@ class FitbitHeartRateVariabilityData implements FitbitData {
           ..write(')'))
         .toString();
   } // toString
+
 } // FitbitHeartRateVariabilityData

@@ -1,5 +1,7 @@
 import 'package:logger/logger.dart';
 
+import 'package:fitbitter/src/utils/formats.dart';
+
 import 'package:fitbitter/src/urls/fitbitAPIURL.dart';
 
 import 'package:fitbitter/src/data/fitbitData.dart';
@@ -39,15 +41,16 @@ class FitbitCardioScoreDataManager extends FitbitDataManager {
     List<FitbitCardioScoreData> cardioScoreDataPoints =
         List<FitbitCardioScoreData>.empty(growable: true);
 
-    if (data.isNotEmpty) {
-      for (var record in data) {
-        cardioScoreDataPoints.add(FitbitCardioScoreData(
-          userID: userId,
-          dateOfMonitoring: DateTime.parse(record['dateTime']),
-          value: record['value']['vo2Max'].toDouble(),
-        ));
-      } // for entry
-    }
+    for (var record in data) {
+      cardioScoreDataPoints.add(FitbitCardioScoreData(
+        userID: userId,
+        dateOfMonitoring:
+            Formats.onlyDayDateFormatTicks.parse(record['dateTime']),
+        value: record['value']['vo2Max'].toDouble(),
+      ));
+    } // for entry
+
     return cardioScoreDataPoints;
   } // _extractFitbitCardioScoreData
+
 } // FitbitCardioScoreDataManager

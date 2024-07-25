@@ -1,5 +1,7 @@
 import 'package:logger/logger.dart';
 
+import 'package:fitbitter/src/utils/formats.dart';
+
 import 'package:fitbitter/src/urls/fitbitAPIURL.dart';
 
 import 'package:fitbitter/src/data/fitbitData.dart';
@@ -39,17 +41,17 @@ class FitbitHeartRateVariabilityDataManager extends FitbitDataManager {
     List<FitbitHeartRateVariabilityData> hrvDataPoints =
         List<FitbitHeartRateVariabilityData>.empty(growable: true);
 
-    if (data.isNotEmpty) {
-      for (var record in data) {
-        hrvDataPoints.add(FitbitHeartRateVariabilityData(
-          userID: userId,
-          dateOfMonitoring: DateTime.parse(record['dateTime']),
-          dailyRmssd: record['value']['dailyRmssd'].toDouble(),
-          deepRmssd: record['value']['deepRmssd'].toDouble(),
-        ));
-      } // for entry
-    }
+    for (var record in data) {
+      hrvDataPoints.add(FitbitHeartRateVariabilityData(
+        userID: userId,
+        dateOfMonitoring:
+            Formats.onlyDayDateFormatTicks.parse(record['dateTime']),
+        dailyRmssd: record['value']['dailyRmssd'].toDouble(),
+        deepRmssd: record['value']['deepRmssd'].toDouble(),
+      ));
+    } // for entry
 
     return hrvDataPoints;
   } // _extractFitbitHeartRateVariabilityData
+
 } // FitbitHeartRateVariabilityDataManager

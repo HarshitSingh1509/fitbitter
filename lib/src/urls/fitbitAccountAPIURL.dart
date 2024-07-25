@@ -15,7 +15,7 @@ class FitbitAccountAPIURL extends FitbitAPIURL {
   /// Return a [FitbitAccountAPIURL] from the given [fitbitCredentials].
   factory FitbitAccountAPIURL.withCredentials(
       {required FitbitCredentials fitbitCredentials}) {
-    final url = '${_getBaseURL()}/${fitbitCredentials.userID}/profile.json';
+    final url = '${_getBaseURL()}.json';
     return FitbitAccountAPIURL(fitbitCredentials: fitbitCredentials, url: url);
   } // FitbitAccountAPIURL.withCredentials
 
@@ -23,4 +23,5 @@ class FitbitAccountAPIURL extends FitbitAPIURL {
   static String _getBaseURL() {
     return 'https://api.fitbit.com/1/user';
   } // _getBaseURL
+
 } // FitbitAccountAPIURL

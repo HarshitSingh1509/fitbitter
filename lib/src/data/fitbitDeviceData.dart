@@ -1,3 +1,5 @@
+import 'package:fitbitter/src/utils/formats.dart';
+
 import 'package:fitbitter/src/data/fitbitData.dart';
 
 /// [FitbitDevicesData] is a class implementing the data model of the
@@ -38,7 +40,7 @@ class FitbitDeviceData implements FitbitData {
       batteryLevel: json['batteryLevel'],
       deviceId: json['deviceId'],
       deviceVersion: json['deviceVersion'],
-      lastSyncTime: DateTime.parse(json['lastSyncTime']),
+      lastSyncTime: Formats.onlyDayDateFormatTicks.parse(json['lastSyncTime']),
       type: json['type'],
     );
   } // fromJson
@@ -67,4 +69,5 @@ class FitbitDeviceData implements FitbitData {
       'type': type,
     };
   } // toJson
+
 } // FitbitDeviceData

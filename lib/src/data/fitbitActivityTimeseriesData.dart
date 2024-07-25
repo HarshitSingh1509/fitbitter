@@ -1,3 +1,5 @@
+import 'package:fitbitter/src/utils/formats.dart';
+
 import 'package:fitbitter/src/data/fitbitData.dart';
 
 /// [FitbitActivityTimeseriesData] is a class implementing the data model of the
@@ -28,7 +30,8 @@ class FitbitActivityTimeseriesData implements FitbitData {
       {required Map<String, dynamic> json}) {
     return FitbitActivityTimeseriesData(
       userID: json['userID'],
-      dateOfMonitoring: DateTime.parse(json['dateOfMonitoring']),
+      dateOfMonitoring:
+          Formats.onlyDayDateFormatTicks.parse(json['dateOfMonitoring']),
       type: json['type'],
       value: json['value'],
     );
@@ -54,4 +57,5 @@ class FitbitActivityTimeseriesData implements FitbitData {
           ..write(')'))
         .toString();
   } // toString
+
 } // FitbitActivityTimeseriesData

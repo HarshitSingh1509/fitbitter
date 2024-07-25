@@ -45,18 +45,18 @@ packages:
     dependency: "direct main"
     description:
       name: cupertino_icons
-      sha256: d57953e10f9f8327ce64a508a355f0b1ec902193f66288e8cb5070e7c47eeb2d
+      sha256: ba631d1c7f7bef6b729a622b7b752645a2d076dba9976925b8f25725a30e1ee6
       url: "https://pub.dev"
     source: hosted
-    version: "1.0.6"
+    version: "1.0.8"
   dio:
     dependency: transitive
     description:
       name: dio
-      sha256: "797e1e341c3dd2f69f2dad42564a6feff3bfb87187d05abb93b9609e6f1645c3"
+      sha256: "7d328c4d898a61efc3cd93655a0955858e29a0aa647f0f9e02d59b3bb275e2e8"
       url: "https://pub.dev"
     source: hosted
-    version: "5.4.0"
+    version: "4.0.6"
   fake_async:
     dependency: transitive
     description:
@@ -71,7 +71,7 @@ packages:
       path: ".."
       relative: true
     source: path
-    version: "2.0.4"
+    version: "2.0.1"
   flutter:
     dependency: "direct main"
     description: flutter
@@ -81,10 +81,10 @@ packages:
     dependency: "direct main"
     description:
       name: flutter_lints
-      sha256: e2a421b7e59244faef694ba7b30562e489c2b489866e505074eb005cd7060db7
+      sha256: a25a15ebbdfc33ab1cd26c63a6ee519df92338a9c10f122adda92938253bef04
       url: "https://pub.dev"
     source: hosted
-    version: "3.0.1"
+    version: "2.0.3"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -94,10 +94,10 @@ packages:
     dependency: transitive
     description:
       name: flutter_web_auth
-      sha256: a69fa8f43b9e4d86ac72176bf747b735e7b977dd7cf215076d95b87cb05affdd
+      sha256: "8c364d8157b299c95f062bbd7bf428bb80c272d7ed3b8f0e6c7028e037e82c76"
       url: "https://pub.dev"
     source: hosted
-    version: "0.5.0"
+    version: "0.4.3"
   flutter_web_plugins:
     dependency: transitive
     description: flutter
@@ -115,26 +115,26 @@ packages:
     dependency: transitive
     description:
       name: intl
-      sha256: d6f56758b7d3014a48af9701c085700aac781a92a87a62b1333b46d8879661cf
+      sha256: "910f85bce16fb5c6f614e117efa303e85a1731bb0081edf3604a2ae6e9a3cc91"
       url: "https://pub.dev"
     source: hosted
-    version: "0.19.0"
+    version: "0.17.0"
   lints:
     dependency: transitive
     description:
       name: lints
-      sha256: cbf8d4b858bb0134ef3ef87841abdf8d63bfc255c266b7bf6b39daa1085c4290
+      sha256: "0a217c6c989d21039f1498c3ed9f3ed71b354e69873f13a8dfc3c9fe76f1b452"
       url: "https://pub.dev"
     source: hosted
-    version: "3.0.0"
+    version: "2.1.1"
   logger:
     dependency: transitive
     description:
       name: logger
-      sha256: "6bbb9d6f7056729537a4309bda2e74e18e5d9f14302489cc1e93f33b3fe32cac"
+      sha256: "7ad7215c15420a102ec687bb320a7312afd449bac63bfb1c60d9787c27b9767f"
       url: "https://pub.dev"
     source: hosted
-    version: "2.0.2+1"
+    version: "1.4.0"
   matcher:
     dependency: transitive
     description:
@@ -179,10 +179,10 @@ packages:
     dependency: "direct main"
     description:
       name: provider
-      sha256: "9a96a0a19b594dbc5bf0f1f27d2bc67d5f95957359b461cd9feb44ed6ae75096"
+      sha256: "59471e0a4595e264625d3496af567ac85bdae1148ec985aff1e0555786f53ecf"
       url: "https://pub.dev"
     source: hosted
-    version: "6.1.1"
+    version: "5.0.0"
   sky_engine:
     dependency: transitive
     description: flutter
@@ -262,4 +262,4 @@ packages:
     version: "0.3.0"
 sdks:
   dart: ">=3.2.0-194.0.dev <4.0.0"
-  flutter: ">=3.0.0"
+  flutter: ">=2.0.0"

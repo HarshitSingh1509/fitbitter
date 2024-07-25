@@ -26,6 +26,7 @@ export 'package:fitbitter/src/errors/fitbitForbiddenException.dart';
 export 'package:fitbitter/src/errors/fitbitNotFoundException.dart';
 export 'package:fitbitter/src/errors/fitbitRateLimitExceededException.dart';
 export 'package:fitbitter/src/errors/fitbitUnauthorizedException.dart';
+export 'package:fitbitter/src/errors/fitbitUnexistentFitbitResourceException.dart';
 
 //Managers
 export 'package:fitbitter/src/managers/fitbitDataManager.dart';
