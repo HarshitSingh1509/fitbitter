@@ -86,11 +86,10 @@ class FitbitActivityTimeseriesDataManager extends FitbitDataManager {
     ];
 
     if (validTypes.contains(type))
-      return 'activities-' + type;
+      return 'activities-tracker-' + type;
     else {
       throw FitbitUnaexistentFitbitResourceException(
           message: 'The specified resource is not existent.');
     } // else
   } // _getDataField
-
 } // FitbitActivityTimeseriesDataManager
